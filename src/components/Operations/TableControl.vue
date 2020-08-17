@@ -8,9 +8,12 @@
       })"
     >
       <slot />
-      <span :class="[$style.marker, { [$style.active]: isActive }]">
-        {{(isActive && asc) ? '+' : '-' }}
-      </span>
+      <svg
+        viewBox="0 0 60 40"
+        :class="[$style.triangle, { [$style.active]: isActive }]"
+      >
+        <polygon :points="points" />
+      </svg>
     </button>
   </th>
 </template>
@@ -31,13 +34,17 @@ export default {
       default: false,
     },
   },
+  computed: {
+    points() {
+      if (this.isActive && this.asc) return '0,0 30,40 60,0';
+
+      return '30,0 60,40 0,40';
+    },
+  },
 };
 </script>
 
 <style module>
-.marker {
-}
-
 .container {
   padding: 0;
 }
@@ -65,7 +72,13 @@ export default {
   z-index: 2;
 }
 
+.triangle {
+  width: 10px;
+  fill: #a7a9ac;
+  margin-left: 2px;
+}
+
 .active {
-  font-weight: 700;
+  fill: var(--link-color);
 }
 </style>
