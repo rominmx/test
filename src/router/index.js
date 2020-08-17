@@ -12,7 +12,7 @@ const routes = [
     component: Home,
   },
   {
-    path: '/field/:fieldId/:operationsType',
+    path: '/field/:fieldId/:filter',
     name: 'field',
     component: Field,
     children: [

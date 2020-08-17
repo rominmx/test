@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { PLANNED } from '../services/operations/constants';
+
 export default {
   name: 'Home',
   computed: {
@@ -17,7 +19,7 @@ export default {
       name: 'field',
       params: {
         fieldId: this.fieldId,
-        operationsType: 'planned',
+        filter: PLANNED,
       },
     });
   },
