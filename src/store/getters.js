@@ -24,11 +24,11 @@ const sortedOperations = (state, getters) => {
     case 'assessment':
     case 'culture':
       results = results.sort((a, b) => {
-        if (a[orderBy] < b[orderBy]) {
+        if (a[orderBy].title < b[orderBy].title) {
           return -1;
         }
 
-        if (a[orderBy] > b[orderBy]) {
+        if (a[orderBy].title > b[orderBy].title) {
           return 1;
         }
 

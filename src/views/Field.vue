@@ -24,7 +24,7 @@
         Добавить операцию
       </button>
     </nav>
-    <operations-table
+    <operations
       :type="filter"
       :field-id="fieldId"
       :loading="operationsLoading"
@@ -42,12 +42,12 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex';
-import OperationsTable from '@/components/Operations/OperationsTable.vue';
+import Operations from '@/components/Operations/Index.vue';
 import { PLANNED, DONE } from '../services/operations/constants';
 
 export default {
   components: {
-    OperationsTable,
+    Operations,
   },
   computed: {
     fieldId() {

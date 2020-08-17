@@ -62,9 +62,19 @@
       <tbody>
       <tr v-for="item in items" :key="item.id">
         <td :class="$style.date">{{ item.date | filterDate }}</td>
-        <td :class="$style.type">{{ item.type }}</td>
-        <td :class="$style.culture">{{ item.culture }}</td>
-        <td :class="$style.assessment">{{ item.assessment }}</td>
+        <td :class="$style.type">{{ item.type.title }}</td>
+        <td :class="$style.culture">
+          <culture
+            :title="item.culture.title"
+            :value="item.culture.value"
+          />
+        </td>
+        <td :class="$style.assessment">
+          <assessment
+            :title="item.assessment.title"
+            :value="item.assessment.value"
+          />
+        </td>
       </tr>
       </tbody>
     </table>
@@ -74,6 +84,8 @@
 <script>
 import { MONTHS } from '@/utls/date';
 import TableControl from './TableControl.vue';
+import Assessment from './Assessment.vue';
+import Culture from './Culture.vue';
 
 export default {
   filters: {
@@ -84,6 +96,8 @@ export default {
     },
   },
   components: {
+    Assessment,
+    Culture,
     TableControl,
   },
   props: {
@@ -153,7 +167,7 @@ export default {
 }
 
 .table td {
-  padding: 12px;
+  padding: 16px 12px;
 }
 
 .table tr {
