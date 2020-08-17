@@ -29,7 +29,7 @@ class FieldService {
         area: 48.2,
         comment: 'Отлично вспахали',
         assessment: ASSESSMENT.get(EXCELLENT),
-        culture: CULTURES.get(WINTER_WHEAT),
+        culture: CULTURES.get(WHEAT),
       }),
       new Operation({
         id: 'f112-o1',

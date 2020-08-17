@@ -1,0 +1,43 @@
+:root {
+    --font-family: SFUIText, Ubuntu, sans-serif;
+    --container-width: 810px;
+    --padding: 30px;
+    --link-color: #3399ff;
+    --background-color: #f9f9f9;
+    --color: #333333;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+html,
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    color: var(--color);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+a {
+    color: var(--link-color);
+}

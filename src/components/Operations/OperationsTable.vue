@@ -1,13 +1,28 @@
 <template>
-  <div>
-    <div>{{ type }} операции для поля: {{ fieldId }}</div>
-    <div v-if="loading">Загрузка операций...</div>
-    <div v-if="error">
+  <div :class="[$style.container, { [$style.hasMessage]: !success }]">
+    <div
+      v-if="loading"
+      :class="$style.message"
+    >
+      Загрузка операций...
+    </div>
+    <div
+      v-if="error"
+      :class="$style.message"
+    >
       Ошибка загрузки данных
       <button @click="retry">Попробовать заново</button>
     </div>
-    <div v-if="zeroElements">Для поля нет доступных операций</div>
-    <table v-if="success">
+    <div
+      v-if="zeroElements"
+      :class="$style.message"
+    >
+      Для поля нет доступных операций
+    </div>
+    <table
+      v-if="success"
+      :class="$style.table"
+    >
       <thead>
       <tr>
         <table-control
@@ -46,10 +61,10 @@
       </thead>
       <tbody>
       <tr v-for="item in items" :key="item.id">
-        <td>{{ item.date | filterDate }}</td>
-        <td>{{ item.type }}</td>
-        <td>{{ item.culture }}</td>
-        <td>{{ item.assessment }}</td>
+        <td :class="$style.date">{{ item.date | filterDate }}</td>
+        <td :class="$style.type">{{ item.type }}</td>
+        <td :class="$style.culture">{{ item.culture }}</td>
+        <td :class="$style.assessment">{{ item.assessment }}</td>
       </tr>
       </tbody>
     </table>
@@ -115,3 +130,52 @@ export default {
   },
 };
 </script>
+
+<style module>
+.container {
+  flex-grow: 1;
+  display: flex;
+}
+
+.hasMessage {
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  font-size: 13px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table td {
+  padding: 12px;
+}
+
+.table tr {
+  border-bottom: 1px solid #edeeee;
+}
+
+.date {
+  width: 75px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.type {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.culture {
+  width: 190px;
+}
+
+.assessment {
+  width: 155px;
+}
+</style>
