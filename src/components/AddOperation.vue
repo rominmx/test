@@ -40,6 +40,7 @@ export default {
 
 .title {
   font-size: 21px;
+  font-weight: 500;
   line-height: 24px;
   padding-left: 20px;
   padding-right: 20px;
