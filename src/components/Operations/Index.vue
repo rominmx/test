@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import { MONTHS } from '@/utls/date';
+import { MONTHS } from '@/utils/date';
 import TableControl from './TableControl.vue';
 import Assessment from './Assessment.vue';
 import Culture from './Culture.vue';
