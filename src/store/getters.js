@@ -1,3 +1,4 @@
+import { ASSESSMENT_VALUES } from '@/services/operations/constants';
 import { PENDING, ERROR } from './constants';
 
 const operationsLoading = (state) => state.operationsStatus === PENDING;
@@ -21,7 +22,6 @@ const sortedOperations = (state, getters) => {
       break;
     // Sort strings
     case 'type':
-    case 'assessment':
     case 'culture':
       results = results.sort((a, b) => {
         if (a[orderBy].title < b[orderBy].title) {
@@ -33,6 +33,15 @@ const sortedOperations = (state, getters) => {
         }
 
         return 0;
+      });
+      break;
+    // Sort by assessment numeric values
+    case 'assessment':
+      results = results.sort((a, b) => {
+        const valueA = ASSESSMENT_VALUES.get(a.assessment.value);
+        const valueB = ASSESSMENT_VALUES.get(b.assessment.value);
+
+        return valueB - valueA;
       });
       break;
     default:

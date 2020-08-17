@@ -1,7 +1,7 @@
 import FieldService from '../services/operations/FieldService';
 import { PENDING, SUCCESS, ERROR } from './constants';
 import {
-  ASSESSMENT_VALUES,
+  ASSESSMENT_TITLES,
   CULTURE_VALUES,
   OPERATION_VALUES,
 } from '../services/operations/constants';
@@ -22,7 +22,7 @@ async function getOperations({ commit }) {
       };
       const assessment = {
         value: operation.assessment,
-        title: ASSESSMENT_VALUES.get(operation.assessment) || ASSESSMENT_VALUES.get(null),
+        title: ASSESSMENT_TITLES.get(operation.assessment) || ASSESSMENT_TITLES.get(null),
       };
 
       return {

@@ -18,7 +18,7 @@ export const OPERATION_VALUES = new Map([
   [BOWLING, 'Боронование зяби и паров'],
   [FERTILIZATION, 'Удобрение'],
   [WATERING, 'Полив'],
-  [RIGGING, 'Протравливание семян'],
+  [RIGGING, 'Прикатывание'],
   [HARVESTING, 'Сбор урожая'],
   [null, 'Нет данных'],
 ]);
@@ -40,11 +40,17 @@ export const ASSESSMENT = new Map([
   [SATISFACTORILY, 'SATISFACTORILY'],
   [BADLY, 'BADLY'],
 ]);
-export const ASSESSMENT_VALUES = new Map([
+export const ASSESSMENT_TITLES = new Map([
   [EXCELLENT, 'Отлично'],
   [SATISFACTORILY, 'Удовлетворительно'],
   [BADLY, 'Плохо'],
   [null, 'Нет оценки'],
+]);
+export const ASSESSMENT_VALUES = new Map([
+  [EXCELLENT, 0],
+  [SATISFACTORILY, 1],
+  [BADLY, 2],
+  [null, 3],
 ]);
 
 // Culture types
