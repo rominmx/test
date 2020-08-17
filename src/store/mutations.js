@@ -6,9 +6,9 @@ const setOperations = (state, operations) => {
   state.operations = [...operations];
 };
 
-const setOrder = (state, { orderBy, asc }) => {
+const setOrder = (state, { orderBy, desc }) => {
   state.order.orderBy = orderBy;
-  state.order.asc = asc;
+  state.order.desc = desc;
 };
 
 // Filter operations by status (PLANNED, DONE)

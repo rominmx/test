@@ -4,7 +4,7 @@
       :class="$style.button"
       @click="$emit('order', {
         orderBy: type,
-        asc: isActive ? !asc : false,
+        desc: isActive ? !desc : false,
       })"
     >
       <slot />
@@ -21,7 +21,7 @@
 <script>
 export default {
   props: {
-    asc: {
+    desc: {
       type: Boolean,
       default: false,
     },
@@ -36,7 +36,7 @@ export default {
   },
   computed: {
     points() {
-      if (this.isActive && this.asc) return '0,0 30,40 60,0';
+      if (this.isActive && this.desc) return '0,0 30,40 60,0';
 
       return '30,0 60,40 0,40';
     },

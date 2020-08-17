@@ -8,6 +8,6 @@ export default {
   filter: PLANNED,
   order: {
     orderBy: 'date',
-    asc: false,
+    desc: false,
   },
 };

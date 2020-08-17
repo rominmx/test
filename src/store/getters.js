@@ -7,7 +7,7 @@ const filteredOperations = (state) => state.operations
   .filter((operation) => operation.status === state.filter);
 
 const sortedOperations = (state, getters) => {
-  const { orderBy, asc } = state.order;
+  const { orderBy, desc } = state.order;
   let results = [...getters.filteredOperations];
 
   switch (orderBy) {
@@ -48,7 +48,7 @@ const sortedOperations = (state, getters) => {
       break;
   }
 
-  if (asc) {
+  if (desc) {
     results = results.reverse();
   }
 

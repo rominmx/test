@@ -84,8 +84,8 @@ export default {
     } else {
       this.setFilter(filter);
       this.setOrder({
-        orderBy: this.query.orderBy,
-        asc: this.query.asc === 'true',
+        orderBy: this.query.orderBy || 'date',
+        asc: this.query.desc === 'false',
       });
     }
 

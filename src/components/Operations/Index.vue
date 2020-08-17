@@ -27,7 +27,7 @@
       <tr>
         <table-control
           :is-active="order.orderBy === 'date'"
-          :asc="order.asc"
+          :desc="order.desc"
           type="date"
           @order="handleOrder"
         >
@@ -35,7 +35,7 @@
         </table-control>
         <table-control
           :is-active="order.orderBy === 'type'"
-          :asc="order.asc"
+          :desc="order.desc"
           type="type"
           @order="handleOrder"
         >
@@ -43,7 +43,7 @@
         </table-control>
         <table-control
           :is-active="order.orderBy === 'culture'"
-          :asc="order.asc"
+          :desc="order.desc"
           type="culture"
           @order="handleOrder"
         >
@@ -51,7 +51,7 @@
         </table-control>
         <table-control
           :is-active="order.orderBy === 'assessment'"
-          :asc="order.asc"
+          :desc="order.desc"
           type="assessment"
           @order="handleOrder"
         >
