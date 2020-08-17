@@ -21,6 +21,7 @@
         title="Добавить операцию"
         @click="addOperation"
       >
+        <span :class="$nav.buttonIcon">+</span>
         Добавить операцию
       </button>
     </nav>
@@ -124,6 +125,7 @@ export default {
 .title {
   font-size: 25px;
   font-weight: 500;
+  margin-top: 32px;
 }
 .container {
   width: var(--container-width);
@@ -175,10 +177,25 @@ export default {
   height: 40px;
   border-radius: 20px;
   cursor: pointer;
+  vertical-align: middle;
 }
 
 .button:focus {
   outline: 2px dotted var(--link-color);
+}
+
+.buttonIcon {
+  background-color: #66cc66;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-right: 4px;
 }
 </style>
 

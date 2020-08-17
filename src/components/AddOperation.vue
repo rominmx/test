@@ -2,13 +2,17 @@
   <div>
     <div :class="$style.container">
       <h2 :class="$style.title">Добавить операцию</h2>
+      <div :class="$style.content">Some content</div>
     </div>
     <div :class="$style.overlay" @click="close"></div>
     <button
       :class="$style.button"
+      title="Закрыть"
       @click="close"
     >
-      Закрыть
+      <svg :class="$style.icon">
+        <use xlink:href="#icon_close" />
+      </svg>
     </button>
   </div>
 </template>
@@ -34,11 +38,40 @@ export default {
   width: 320px;
 }
 
+.title {
+  font-size: 21px;
+  line-height: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .button {
   position: fixed;
   z-index: 2;
-  right: 32px;
-  top: 32px;
+  right: 30px;
+  top: 30px;
+  background-color: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.button:active {
+  outline: 2px dotted var(--link-color);
 }
 
 .overlay {
